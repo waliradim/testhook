@@ -1,12 +1,12 @@
 import React from "react";
+import Count from "./component/useState/Count";
+import Todo from "./component/useState/Todo";
 
 function App() {
   return (
     <div>
-      <h1>Radim</h1>
-      <form action="">
-        <input type="text" />
-      </form>
+      <Todo />
+      <Count />
     </div>
   );
 }
