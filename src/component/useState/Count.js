@@ -1,6 +1,5 @@
 import React from "react";
 import { useState } from "react";
-import Todo from "./Todo";
 
 export default function Count() {
   const [count, setCount] = useState(0);

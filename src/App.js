@@ -1,12 +1,15 @@
-import React from "react";
-import Count from "./component/useState/Count";
-import Todo from "./component/useState/Todo";
+import React, { useState } from "react";
+import DateEffect from "./component/useEffect/DateEffect";
 
 function App() {
+  const [show, setshow] = useState(true);
+
   return (
     <div>
-      <Todo />
-      <Count />
+      {show && <DateEffect />}
+      <button type="button" onClick={() => setshow((prevShow) => !prevShow)}>
+        {show ? "hide clock" : "Show clock"}
+      </button>
     </div>
   );
 }
