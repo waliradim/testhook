@@ -1,15 +1,35 @@
-import React, { useState } from "react";
-import DateEffect from "./component/useEffect/DateEffect";
+import React, { useCallback, useMemo, useState } from "react";
+import Title from "./component/MemoCallBack/Title";
+import ShowCount from "./component/MemoCallBack/ShowCount";
+import Button from "./component/MemoCallBack/Button";
 
 function App() {
-  const [show, setshow] = useState(true);
+  const [count1, setcount1] = useState(0);
+  const [count2, setcount2] = useState(0);
+
+  const incrementOne = useCallback(() => {
+    setcount1((prevCount1) => prevCount1 + 1);
+  }, []);
+
+  const incrementFive = useCallback(() => {
+    setcount2((prevCount2) => prevCount2 + 5);
+  }, []);
+
+  const isEvenOrOdd = useMemo(() => {
+    let i = 0;
+    while (i < 1000000000) i += 1;
+    return count1 % 2 === 0;
+  }, [count1]);
 
   return (
     <div>
-      {show && <DateEffect />}
-      <button type="button" onClick={() => setshow((prevShow) => !prevShow)}>
-        {show ? "hide clock" : "Show clock"}
-      </button>
+      <Title />
+      <ShowCount title={"Counter-1"} count={count1} />
+      <span>{isEvenOrOdd ? "Even" : "Odd"}</span>
+      <Button handelClick={incrementOne}>Increment by One</Button>
+      <hr />
+      <ShowCount title={"Counter-2"} count={count2} />
+      <Button handelClick={incrementFive}>Increment by Five</Button>
     </div>
   );
 }
