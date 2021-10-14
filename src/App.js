@@ -1,15 +1,13 @@
 import React from "react";
-
-import Form from "./component/UseRef/Form";
-import Time from "./component/UseRef/Time";
+import Counter from "./component/Reduce/Counter";
+import Counter2 from "./component/Reduce/Counter2";
 
 function App() {
   return (
     <div>
-      <h1>Use React Hook useRef</h1>
-      <Time />
-      <br />
-      <Form />
+      <h1>Use React Hook useReducer </h1>
+      <Counter />
+      <Counter2 />
     </div>
   );
 }
