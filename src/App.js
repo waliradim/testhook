@@ -1,11 +1,11 @@
 import React from "react";
-import GetPost from "./component/Reduce/GetPost";
+import GetPost2 from "./component/Reduce/GetPost2";
 
 function App() {
   return (
     <div>
       <h1>Use React Hook useReducer </h1>
-      <GetPost />
+      <GetPost2 />
     </div>
   );
 }
