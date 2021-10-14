@@ -1,11 +1,12 @@
 import React from "react";
-import GetPost2 from "./component/Reduce/GetPost2";
+import LayoutComponentOne from "./component/CustomHook/LayoutComponentOne";
+import LayoutComponentTwo from "./component/CustomHook/LayoutComponentTwo";
 
 function App() {
   return (
     <div>
-      <h1>Use React Hook useReducer </h1>
-      <GetPost2 />
+      <h1>Use React Custom Hook </h1>
+      <LayoutComponentTwo />
     </div>
   );
 }
