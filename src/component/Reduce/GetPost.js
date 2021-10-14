@@ -15,7 +15,7 @@ export default function GetPost() {
       })
       .catch(() => {
         setloading(false);
-        setPost("");
+        setPost([]);
         setError("There was a problem...!");
       });
   }, []);
